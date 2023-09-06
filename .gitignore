@@ -1,0 +1,6 @@
+/node_modules
+.nx/installation
+.nx/cache
+
+# Next.js
+.next
