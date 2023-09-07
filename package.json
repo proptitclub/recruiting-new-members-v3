@@ -1,4 +1,10 @@
 {
+  "name": "recruiting-new-members-v3",
+  "scripts": {
+    "admin": "nx serve admin",
+    "client": "nx serve client",
+    "backend": "nx serve backend"
+  },
   "devDependencies": {
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
