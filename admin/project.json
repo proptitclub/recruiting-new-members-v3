@@ -11,8 +11,7 @@
       ],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/admin",
-        "port": 5000
+        "outputPath": "dist/admin"
       },
       "configurations": {
         "development": {

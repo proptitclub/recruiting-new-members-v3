@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "shared": ["shared/src/index.ts"]
+      "@shared/components": ["shared/src/components/index.ts"],
+      "@shared/hooks": ["shared/src/hooks/index.ts"],
+      "@shared/services": ["shared/src/services/index.ts"],
+      "@shared/utility": ["shared/src/utility/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

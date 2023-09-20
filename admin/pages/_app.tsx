@@ -1,18 +1,15 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
+import { ChakraProvider } from '@chakra-ui/react';
+import GlobalContextProvider from '../contexts';
 import './styles.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: any) {
   return (
-    <>
-      <Head>
-        <title>Welcome to admin!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
+    <ChakraProvider>
+      <GlobalContextProvider>
+        <Component JSXElement {...pageProps} />
+      </GlobalContextProvider>
+    </ChakraProvider>
   );
 }
 
-export default CustomApp;
+export default MyApp;
