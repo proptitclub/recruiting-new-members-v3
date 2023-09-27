@@ -1,9 +1,10 @@
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 
-import { AppModule } from './app/app.module';
-import { AllExceptionsFilter } from './app/common/filter/all-exception.filter';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as bodyParser from 'body-parser';
+import { AppModule } from './app.module';
+import { AllExceptionsFilter } from './common/filter/all-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -15,6 +16,8 @@ async function bootstrap() {
     origin: '*',
   });
 
+  app.use(bodyParser.json({ limit: '50mb' }));
+  app.use(bodyParser.urlencoded({ limit: '50mb' }));
   // Validations
   app.useGlobalPipes(
     new ValidationPipe({
